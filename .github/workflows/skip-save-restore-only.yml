@@ -20,7 +20,7 @@ jobs:
         with:
           path: ${{ github.workspace }}/node_modules
           key: qwertyuiop
-          restore-keys: no-exact-key-
+          restore-keys: no-
       - name: NPM install
         shell: bash
         if: steps.cache-restore.outputs.cache-hit != 'true'
