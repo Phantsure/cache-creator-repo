@@ -19,7 +19,7 @@ jobs:
         id: cache-restore
         with:
           path: ${{ github.workspace }}/node_modules
-          key: zxcv
+          key: no-exact-key-present
           restore-keys: keynokey-
       - name: NPM install
         shell: bash
