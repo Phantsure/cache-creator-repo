@@ -1,11 +1,12 @@
 name: Skip restore, only save
 on:
-  push:
   workflow_dispatch:
 jobs:
   build:
     name: Build Test
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest
     steps:
       - name: Get current date
         shell: bash
