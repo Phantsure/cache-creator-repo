@@ -7,6 +7,8 @@ jobs:
   build:
     name: Build Test
     runs-on: ubuntu-latest
+    container:
+      image: node:14.16
     steps:
       - name: Get current date
         shell: bash
@@ -18,7 +20,7 @@ jobs:
         with:
           path: ${{ github.workspace }}/node_modules
           key: qwertyuiop
-          restore-keys: no-
+          restore-keys: no-exact-key-
       - name: NPM install
         shell: bash
         if: steps.cache-restore.outputs.cache-hit != 'true'
